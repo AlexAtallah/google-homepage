@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<head>
+    <title>Basic Layout with css grid</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="#">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <ul>
+                <li><a href="#">Images</a></li>
+                <li><a href="#">Gmail</a></li>
+            </ul>
+        </div>
+        <div class="body">
+            <img id="google-img" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png">
+            
+        </div>
+        <div class="search-bar">
+            <input type="text" class="bar-format"> 
+        </div>
+        <div class="fill-in">
+            <button type="button" id="right-search">Google Search</button>
+            <button type="button">I'm Feeling Lucky</button>
+        </div>
+        <div class="footer">
+            <ul>
+                <li class="left-list"><a class="bottom-links" href="#">About</a></li>
+                <li class="left-list"><a class="bottom-links" href="#">Advertising</a></li>
+                <li class="left-list"><a class="bottom-links" href="#">Business</a></li>
+                <li class="left-list"><a class="bottom-links" href="#">How Search Works</a></li>
+            </ul>
+            <ul>
+                <li class="right-list"><a class="bottom-links" href="#">Settings</a></li>
+                <li class="right-list"><a class="bottom-links" href="#">Terms</a></li>
+                <li class="right-list"><a class="bottom-links" href="#">Privacy</a></li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+
+<style>
+    body{
+        margin:0;
+    }
+    button{
+        background-color: #f8f9fa;
+        border: 1px solid #f8f9fa;
+        border-radius: 2px;
+        color: #3c4043;
+        font-family: arial,sans-serif;
+        font-size: 14px;
+        margin: 11px 4px;
+        padding: 0 16px;
+        line-height: 27px;
+        height: 36px;
+        width: 50%;
+        cursor: pointer;
+        user-select: none;
+        
+    }
+    #right-search{
+        margin: 11px 4px;
+        padding: 0 16px;
+        line-height: 27px;
+        height: 36px;
+        width: 50%;
+        cursor: pointer;
+        user-select: none;
+        margin-left: 150px;
+    }
+    ul{
+        margin:0;
+        padding:0;
+    }
+    li{
+        display:block;
+        float:right;
+        padding: 10px 30px;
+        font-size: 13px;
+    }
+    .left-list{
+        display:block;
+        float:left;
+        padding: 10px 30px;
+        font-size: 14px;
+        color: #70757a;
+        font-family: arial,sans-serif;
+
+    }
+    .right-list{
+        display:block;
+        float:right;
+        padding: 10px 30px;
+        font-size: 14px;
+        color: #70757a;
+        font-family: arial,sans-serif;
+
+    }
+    .container{
+        width:100vw;
+        height:100vh;
+        font-size: 14px;
+        font-family: arial,sans-serif;
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 50px 9fr 1fr 9fr 60px;
+        color: #222;
+    }
+    .header,.body,.footer,.search-bar,.fill-in{
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+    .body{
+        grid-row-start: 2;
+        grid-row-end: 3;
+        margin-left: 822px;
+        margin-top: 201px;
+    }
+    .search-bar{
+        grid-row-start: 3;
+        grid-row-end: 4;
+        margin:0 auto;
+        width:575px;
+        border-radius:30px;
+        border:1px solid #dcdcdc;
+        overflow: hidden;
+
+    }
+    .bar-format{
+        height:45px;
+        border:none;
+        width:500px;
+        font-size:16px;
+        outline: none;
+    }
+    .fill-in{
+        grid-row-start: 4;
+        grid-row-end: 5;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-column-start: 2;
+        grid-column-end: 3;
+
+    }
+    .footer{
+        grid-row-start: 5;
+        grid-row-end: 6;
+        background-color: #f2f2f2
+    }
+    a{
+        text-decoration: none;
+        color:#222;
+    }
+    a:hover{
+        text-decoration:underline;
+    }
+    .bottom-links{
+        color:#70757a;
+    }
+</style>
